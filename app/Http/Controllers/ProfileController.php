@@ -10,7 +10,11 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $profile = Profile::first();
+        try {
+            $profile = Profile::first();
+        } catch (\Exception $e) {
+            $profile = null;
+        }
         return view('home', compact('profile'));
     }
 
