@@ -4,5 +4,8 @@ php = "8.4"
 [phases.setup]
 nixPkgs = ["php84", "nodejs", "npm"]
 
+[phases.install]
+cmds = ["composer install --optimize-autoloader --no-scripts --no-interaction --ignore-platform-req=php"]
+
 [phases.build]
-cmds = ["composer install", "npm install", "npm run build"]
+cmds = ["npm install", "npm run build"]
