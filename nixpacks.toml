@@ -2,4 +2,7 @@
 php = "8.4"
 
 [phases.setup]
-nixPkgs = ["php84"]
+nixPkgs = ["php84", "nodejs", "npm"]
+
+[phases.build]
+cmds = ["composer install", "npm install", "npm run build"]
